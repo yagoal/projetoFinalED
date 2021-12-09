@@ -1,0 +1,115 @@
+package sistemadepacientes;
+import java.util.*;
+
+
+public class CadastroPaciente {
+
+	public static void main(String[] args) {
+		System.out.println("Qual Estrutura você deseja trabalhar os pacientes ?");
+		System.out.println("Digite 1 para ArrayList");
+		System.out.println("Digite 2 para Fila");
+		System.out.println("Digite 3 para Pilha");
+		Scanner opt = new Scanner (System.in);
+		int tipoEstrutura = opt.nextInt();
+		
+		
+		
+		switch (tipoEstrutura) {
+			case 1:
+				ArrayList<Paciente> listaPaciente = new ArrayList<>();
+				System.out.println("Quantos Pacientes você deseja cadastrar");
+				int cad = opt.nextInt();
+				for (int i = 0; i < cad;i++) {
+					Paciente paciente = new Paciente ();
+					System.out.println("Qual o nome do Paciente nº " + (i + 1 ));
+					paciente.setNome(opt.next());
+					System.out.println("Qual o CPF do Paciente nº " + (i + 1));
+					paciente.setCPF(opt.next());
+					System.out.println("Qual o nº do Cartão do SUS do Paciente nº " + (i + 1));
+					paciente.setCartaoSUS(opt.next());
+					System.out.println("Qual a data de Nascimento do Paciente nº " +  (i + 1));
+					paciente.setDataDeNascimento(opt.next());
+					System.out.println("Qual o telefone do Paciente nº " + (i + 1));
+					paciente.setTelefone(opt.next());
+					listaPaciente.add(paciente);
+				}
+				int cont = 1;
+				System.out.println("-------------------------------------------");
+				for(Paciente obj : listaPaciente){
+					   
+					   System.out.println("Nome do Paciente nº " + cont + ": " +  obj.getNome());
+					   System.out.println("CPF do Paciente nº " + cont + ": " + obj.getCPF());
+					   System.out.println("Cartão do SUS do Paciente nº " + cont + ": " + obj.getCartaoSUS());
+					   System.out.println("Data de Nascimento do Paciente nº " + cont + ": " + obj.getDataDeNascimento());
+					   System.out.println("Telefone do Paciente nº " + cont + ": " + obj.getTelefone());
+					   System.out.println("-------------------------------------------");
+					   cont++;
+				}
+				break;
+			case 2: 
+				Queue<Paciente> filaPaciente = new LinkedList<>();
+				System.out.println("Quantos Pacientes você deseja cadastrar");
+				int cad2 = opt.nextInt();
+				for (int i = 0; i < cad2;i++) {
+					Paciente paciente = new Paciente ();
+					System.out.println("Qual o nome do Paciente nº " + (i + 1 ));
+					paciente.setNome(opt.next());
+					System.out.println("Qual o CPF do Paciente nº " + (i + 1));
+					paciente.setCPF(opt.next());
+					System.out.println("Qual o nº do Cartão do SUS do Paciente nº " + (i + 1));
+					paciente.setCartaoSUS(opt.next());
+					System.out.println("Qual a data de Nascimento do Paciente nº " +  (i + 1));
+					paciente.setDataDeNascimento(opt.next());
+					System.out.println("Qual o telefone do Paciente nº " + (i + 1));
+					paciente.setTelefone(opt.next());
+					filaPaciente.add(paciente);
+				}
+				int cont1 = 1;
+				System.out.println("-------------------------------------------");
+				for(Paciente obj : filaPaciente){
+					   
+					   System.out.println("Nome do Paciente nº " + cont1 + ": " +  obj.getNome());
+					   System.out.println("CPF do Paciente nº " + cont1 + ": " + obj.getCPF());
+					   System.out.println("Cartão do SUS do Paciente nº " + cont1 + ": " + obj.getCartaoSUS());
+					   System.out.println("Data de Nascimento do Paciente nº " + cont1 + ": " + obj.getDataDeNascimento());
+					   System.out.println("Telefone do Paciente nº " + cont1 + ": " + obj.getTelefone());
+					   System.out.println("-------------------------------------------");
+					   cont1++;
+				}
+			case 3: 
+				Stack<Paciente> pilhaPaciente = new Stack<>();
+				System.out.println("Quantos Pacientes você deseja cadastrar");
+				int cad3 = opt.nextInt();
+				for (int i = 0; i < cad3;i++) {
+					Paciente paciente = new Paciente ();
+					System.out.println("Qual o nome do Paciente nº " + (i + 1 ));
+					paciente.setNome(opt.next());
+					System.out.println("Qual o CPF do Paciente nº " + (i + 1));
+					paciente.setCPF(opt.next());
+					System.out.println("Qual o nº do Cartão do SUS do Paciente nº " + (i + 1));
+					paciente.setCartaoSUS(opt.next());
+					System.out.println("Qual a data de Nascimento do Paciente nº " +  (i + 1));
+					paciente.setDataDeNascimento(opt.next());
+					System.out.println("Qual o telefone do Paciente nº " + (i + 1));
+					paciente.setTelefone(opt.next());
+					pilhaPaciente.push(paciente);
+				}
+				int cont2 = 1;
+				System.out.println("-------------------------------------------");
+				for(Paciente obj : pilhaPaciente){
+					   
+					   System.out.println("Nome do Paciente nº " + cont2 + ": " +  obj.getNome());
+					   System.out.println("CPF do Paciente nº " + cont2 + ": " + obj.getCPF());
+					   System.out.println("Cartão do SUS do Paciente nº " + cont2 + ": " + obj.getCartaoSUS());
+					   System.out.println("Data de Nascimento do Paciente nº " + cont2 + ": " + obj.getDataDeNascimento());
+					   System.out.println("Telefone do Paciente nº " + cont2 + ": " + obj.getTelefone());
+					   System.out.println("-------------------------------------------");
+					   cont2++;
+				}
+			default:
+				System.out.println("Opção Inválida");
+					
+		}
+	}
+
+}
